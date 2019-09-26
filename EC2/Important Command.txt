@@ -1,0 +1,16 @@
+
+
+
+lsblk
+
+mkdir -p /var/recovery-disk                                                                         # creating mount point to mount attach disk
+        
+mount -o nouuid /dev/xvdf1 /var/recovery-disk                                                       # mount disk to the mounting point 
+
+df -h
+
+cat /home/ec2-user/.ssh/authorized_keys >> /var/recovery-disk/home/ec2-user/.ssh/authorized_keys    # Getting in the file and coping content to the authorized key
+
+umount /var/recovery-disk                                                                           #unmont disk 
+
+df -h                                                                                         
